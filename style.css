@@ -1,0 +1,210 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial;
+    background-color: #f5f5f5;
+}
+
+
+.Inputbox {
+    position: absolute;
+    right: 50px;
+    top: 150px;
+}
+
+#Input {
+    width: 250px;
+    height: 400px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none;
+}
+
+
+.wheel {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    position: relative;
+    background-color: gray;
+    overflow: hidden;
+    transform: rotate(0deg);
+}
+
+.clickbt {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: white;
+    cursor: pointer;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #222;
+    user-select: none;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.clickbt:hover {
+    background-color: #eeeeee;
+}
+
+.clickbt:active {
+    transform: translate(-50%, -50%) scale(0.95);
+}
+
+.wheel-names {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.wheel-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0 0;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+.pointer {
+    position: absolute;
+    top: 50%;
+    left: calc(50% + 245px);
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 30px solid silver;
+    z-index: 20;
+}
+
+@media (max-width: 800px) {
+    body {
+        flex-direction: column;
+    }
+    .wheel {
+        width: 90vw;
+        height: 90vw;
+        max-width: 500px;
+        max-height: 500px;
+    }
+    .Inputbox {
+        position: static;
+        margin-top: 20px;
+        order: 2;
+    }
+    #Input {
+        width: 80vw;
+        height: 100px;
+    }
+
+    .pointer {
+        display: none;
+    }
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s;
+}
+
+.modal-overlay.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-box {
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    min-width: 500px;
+    transform: scale(0.8);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal-overlay.show .modal-box {
+    transform: scale(1);
+}
+
+.modal-message {
+    font-size: 20px;
+}
+
+#winnerName {
+    color: black;
+    font-size: 26px;
+    display: block;
+    margin-top: 10px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.btn {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.btn-continue {
+    background-color: #eeeeee;
+    color: #333;
+}
+
+.btn-continue:hover {
+    background-color: #dddddd;
+}
+
+.btn-remove {
+    background-color: hsl(4, 77%, 42%);
+    color: white;
+}
+
+.btn-remove:hover {
+    background-color: #a81c1c;
+}

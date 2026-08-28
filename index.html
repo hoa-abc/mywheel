@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Wheel of fortune </title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="Inputbox">
+            <textarea name="Input" id="Input"> </textarea>
+        </div>
+
+        <div class="wheel" id="wheel"> 
+            <div class="clickbt"> </div>
+            <div class="wheel-names"> </div>
+        </div>
+
+        <div class="pointer"> </div>
+
+        <div class="modal-overlay" id="modalOverlay">
+            <div class="modal-box">
+                <p class="modal-message">Bạn đã quay trúng <strong id="winnerName"></strong></p>
+                <div class="modal-buttons">
+                    <button id="btnContinue" class="btn btn-continue"> Đóng</button>
+                    <button id="btnRemove" class="btn btn-remove"> Xóa </button>
+                </div>
+            </div>
+        </div>
+        
+        <script src="script.js"></script>
+    </body>
+</html>
