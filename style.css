@@ -2,6 +2,21 @@
     box-sizing: border-box;
 }
 
+header {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 100;
+}
+
+#mywheel {
+    width: 50px;
+    object-fit: contain;
+}
+
 body {
     height: 100vh;
     margin: 0;
@@ -12,6 +27,43 @@ body {
     background-color: #f5f5f5;
 }
 
+.ImageImport {
+    position: absolute;
+    top: 100px; 
+    right: 50px;
+    width: 100px;
+}
+
+#Image {
+    width: 100%;
+    background-color: rgb(61, 61, 255);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+#Image:hover {
+    background-color: rgb(41, 41, 200);
+}
+
+#Image:active {
+    transform: scale(0.95);
+}
+
+#winnerImage {
+    max-width: 200px;
+    max-height: 200px;
+    margin: 10px auto;
+    display: none; 
+    border-radius: 10px;
+    object-fit: contain;
+}
 
 .Inputbox {
     position: absolute;
@@ -20,14 +72,31 @@ body {
 }
 
 #Input {
-    width: 250px;
+    width: 200px;
     height: 400px;
     padding: 10px;
     border-radius: 5px;
+    border: 2px solid #222;
     font-size: 16px;
-    resize: none;
+    background-color: white;
+    overflow-y: auto; 
+    outline: none; 
+    white-space: pre-wrap; 
 }
 
+#Input:empty:before {
+    content: attr(placeholder);
+    color: #888;
+}
+
+#Input img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+    vertical-align: middle;
+    margin: 2px;
+}
 
 .wheel {
     width: 500px;
@@ -87,6 +156,10 @@ body {
     font-weight: bold;
     white-space: nowrap;
     z-index: 2;
+    
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .pointer {
@@ -154,7 +227,7 @@ body {
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    min-width: 500px;
+    min-width: 700px;
     transform: scale(0.8);
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -171,7 +244,9 @@ body {
     color: black;
     font-size: 26px;
     display: block;
-    margin-top: 10px;
+    margin-top: 20px;
+    overflow-wrap: break-word;
+    word-break: break-all;
 }
 
 .modal-buttons {

@@ -5,11 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> Wheel of fortune </title>
         <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="mywheel.png" type="image/png">
     </head>
 
     <body>
+        <header>
+            <img src="mywheel.png" alt="mywheel" id="mywheel">
+            <h1> MyWheel </h1>
+        </header>
         <div class="Inputbox">
-            <textarea name="Input" id="Input"> </textarea>
+            <div id="Input" contenteditable="true"> </div>
         </div>
 
         <div class="wheel" id="wheel"> 
@@ -22,11 +27,17 @@
         <div class="modal-overlay" id="modalOverlay">
             <div class="modal-box">
                 <p class="modal-message">Bạn đã quay trúng <strong id="winnerName"></strong></p>
+                <img id="winnerImage" alt="Image">
                 <div class="modal-buttons">
                     <button id="btnContinue" class="btn btn-continue"> Đóng</button>
                     <button id="btnRemove" class="btn btn-remove"> Xóa </button>
                 </div>
             </div>
+        </div>
+
+        <div class="ImageImport">
+            <button id="Image"> Nhập ảnh </button>
+            <input type="file" id="fileInput" accept="image/*" multiple style="display: none;">
         </div>
         
         <script src="script.js"></script>
