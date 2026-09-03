@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-"# mywheel"
-=======
-Get ideas from https://wheelofnames.com/
->>>>>>> 938064cf870681e7ae7b693e103f0331acdcf0c1
+# *Vòng quay may mắn*
+
+Hỗ trợ bởi **AI Gemini Pro**
+
+Lấy ý tưởng từ trang web (https://wheelofnames.com/)
